@@ -3,7 +3,7 @@ import MultiStepForm from "./components/MultiStepForm";
 
 const App = () => {
 	return (
-		<Flex align="center" justify="center" w="full" h="100vh" bg="primary.200">
+		<Flex align="center" justify="center" w="full" h="100vh" bg="neutral.200">
 			<MultiStepForm />
 		</Flex>
 	);

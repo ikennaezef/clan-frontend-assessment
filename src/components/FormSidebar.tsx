@@ -25,16 +25,25 @@ const FormSidebar = () => {
 	const { currentStep } = useApp();
 	return (
 		<Box
-			w="30%"
-			bgImage="/images/bg-sidebar-desktop.svg"
+			w={{ base: "100%", md: "30%" }}
+			h={{ base: "12rem", md: "auto" }}
+			bgImage={{
+				base: "/images/bg-sidebar-mobile.svg",
+				md: "/images/bg-sidebar-desktop.svg",
+			}}
 			bgRepeat="no-repeat"
 			bgPosition="center"
 			bgSize="cover"
-			rounded="lg"
+			rounded={{ base: "none", md: "lg" }}
 			p={8}>
-			<Flex direction="column" gap={6}>
+			<Flex
+				direction={{ base: "row", md: "column" }}
+				justify={{ base: "center", md: "flex-start" }}
+				gap={{ base: 4, md: 6 }}
+				pt={{ base: 2, md: 0 }}>
 				{steps.map((step) => (
 					<StepButton
+						key={step.id}
 						step={step.id}
 						title={step.title}
 						selected={currentStep == step.id}

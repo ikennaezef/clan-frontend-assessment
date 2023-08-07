@@ -1,5 +1,4 @@
-import { Text, Button, Flex, Box } from "@chakra-ui/react";
-import { useApp } from "../context";
+import { Text, Flex, Box } from "@chakra-ui/react";
 
 interface IProps {
 	step: number;
@@ -8,9 +7,8 @@ interface IProps {
 }
 
 const StepButton = ({ step, title, selected }: IProps) => {
-	const { changeStep } = useApp();
 	return (
-		<Flex align="center" gap={4} onClick={() => changeStep(step)}>
+		<Flex align="center" gap={4}>
 			<Flex
 				align="center"
 				justify="center"
@@ -24,7 +22,7 @@ const StepButton = ({ step, title, selected }: IProps) => {
 					{step}
 				</Text>
 			</Flex>
-			<Box>
+			<Box hideBelow="md">
 				<Text fontSize="sm" color="neutral.300">
 					STEP {step}
 				</Text>

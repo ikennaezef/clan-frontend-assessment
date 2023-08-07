@@ -10,12 +10,6 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-html,
-body {
-	font-family: "Ubuntu", sans-serif;
-	color: hsl(213, 96%, 18%);
-}
-
 * {
 	font-family: "Ubuntu", sans-serif;
 	color: hsl(213, 96%, 18%);

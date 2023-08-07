@@ -1,10 +1,7 @@
 import { Flex, Box } from "@chakra-ui/react";
 import FormSidebar from "./FormSidebar";
 import { useApp } from "../context";
-import StepOne from "./steps/StepOne";
-import StepTwo from "./steps/StepTwo";
-import StepThree from "./steps/StepThree";
-import StepFour from "./steps/StepFour";
+import { StepOne, StepTwo, StepThree, StepFour, Finished } from "./steps";
 
 const MultiStepForm = () => {
 	const { currentStep } = useApp();
@@ -23,13 +20,30 @@ const MultiStepForm = () => {
 		case 4:
 			currentForm = <StepFour />;
 			break;
+		case 5:
+			currentForm = <Finished />;
+			break;
 		default:
 			break;
 	}
 	return (
-		<Flex rounded="lg" bg="white" w="1000px" h="600px" gap={2} p={3}>
+		<Flex
+			flexDir={{ base: "column", md: "row" }}
+			rounded={{ base: "none", md: "lg" }}
+			bg="white"
+			w={{ base: "100%", md: "900px" }}
+			h={{ base: "100%", md: "600px" }}
+			gap={{ base: 0, md: 2 }}
+			p={{ base: 0, md: 3 }}>
 			<FormSidebar />
-			<Box w="70%" px={16} py={6}>
+			<Box
+				pos="relative"
+				minH={{ base: "80vh", md: "100%" }}
+				w={{ base: "100%", md: "70%" }}
+				bg={{ base: "neutral.200", md: "white" }}
+				px={{ base: 0, md: 16 }}
+				py={6}
+				pb={{ base: 0, md: 6 }}>
 				{currentForm}
 			</Box>
 		</Flex>
